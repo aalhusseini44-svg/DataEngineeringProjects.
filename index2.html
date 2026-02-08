@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmed Mahmoud | Elite Data Engineer</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        :root {
+            --primary: #3b82f6;
+            --bg-dark: #020617;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: #f8fafc;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        .premium-gradient {
+            background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #f472b6 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .glass {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Bento Grid Animation */
+        .bento-item {
+            background: rgba(30, 41, 59, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .bento-item.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .bento-item:hover {
+            border-color: var(--primary);
+            background: rgba(30, 41, 59, 0.6);
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15);
+        }
+
+        /* Floating Animation for Hero Icons */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        .float-anim {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* Glowing Orbs */
+        .glow-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            z-index: -1;
+            opacity: 0.4;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: var(--bg-dark); }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--primary); }
+    </style>
+</head>
+<body>
+
+    <!-- Background Decoration -->
+    <div class="glow-orb bg-blue-600 w-[500px] h-[500px] -top-40 -right-20"></div>
+    <div class="glow-orb bg-purple-900 w-[400px] h-[400px] bottom-0 -left-20"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass border-b border-white/5">
+        <div class="container mx-auto px-8 py-5 flex justify-between items-center">
+            <div class="text-2xl font-black tracking-tighter premium-gradient">AMH.</div>
+            <div class="hidden md:flex space-x-10 text-sm font-bold uppercase tracking-widest text-slate-400">
+                <a href="#home" class="hover:text-white transition">Home</a>
+                <a href="#about" class="hover:text-white transition">About</a>
+                <a href="#projects" class="hover:text-white transition">Projects</a>
+                <a href="#contact" class="hover:text-blue-500 transition">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center px-8 relative overflow-hidden">
+        <div class="container mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div class="animate-in fade-in slide-in-from-left duration-1000">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold mb-8 tracking-widest uppercase">
+                    Available for Elite Projects
+                </div>
+                <h1 class="text-6xl md:text-8xl font-black mb-8 leading-[1.1] tracking-tighter">
+                    Data <br><span class="premium-gradient">Architect</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-slate-400 mb-12 max-w-2xl font-light leading-relaxed">
+                    Hi, I'm <span class="text-white font-semibold">Ahmed Mahmoud</span>. Crafting next-gen data infrastructures and AI integrations at DEPI.
+                </p>
+                <div class="flex flex-wrap gap-6">
+                    <a href="#projects" class="px-10 py-5 bg-blue-600 text-white rounded-full font-black hover:bg-blue-500 transition shadow-2xl shadow-blue-500/30 flex items-center gap-3 uppercase tracking-widest text-sm">
+                        Work Portfolio
+                        <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hidden md:flex justify-center relative">
+                <div class="float-anim bg-white/5 p-12 rounded-[4rem] border border-white/10 backdrop-blur-3xl shadow-2xl">
+                    <i data-lucide="database" class="w-40 h-40 text-blue-500 opacity-80"></i>
+                </div>
+                <div class="absolute -bottom-10 -right-10 float-anim" style="animation-delay: -3s">
+                    <div class="bg-purple-600/20 p-8 rounded-3xl border border-purple-500/20 backdrop-blur-xl">
+                        <i data-lucide="cpu" class="w-12 h-12 text-purple-400"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bento Grid Section -->
+    <section id="about" class="py-32 px-8">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <!-- Staggered Entrance Elements -->
+                <div class="md:col-span-2 md:row-span-2 bento-item p-12 rounded-[3rem] flex flex-col justify-between" data-delay="0">
+                    <div>
+                        <h2 class="text-xs font-bold uppercase tracking-[0.4em] text-blue-500 mb-6 italic">Evolution</h2>
+                        <h3 class="text-4xl font-bold mb-6">Bridging Logic <br>& Data Science.</h3>
+                        <p class="text-slate-400 text-lg leading-relaxed font-light">
+                            Computer Science student specialized in AI. Currently mastering **Data Engineering** at DEPI to empower the next generation of intelligent systems.
+                        </p>
+                    </div>
+                    <div class="flex gap-4 mt-12">
+                         <div class="p-5 rounded-2xl bg-white/5 border border-white/5 flex-1">
+                            <i data-lucide="layers" class="text-blue-500 mb-3"></i>
+                            <div class="text-xs font-black uppercase tracking-widest opacity-60">ETL Pipelines</div>
+                         </div>
+                    </div>
+                </div>
+
+                <div class="bento-item p-10 rounded-[3rem] flex flex-col items-center justify-center text-center" data-delay="200">
+                    <i data-lucide="terminal" class="w-12 h-12 text-blue-500 mb-4"></i>
+                    <h4 class="font-black text-2xl tracking-tighter">Python</h4>
+                </div>
+
+                <div class="bento-item p-10 rounded-[3rem] flex flex-col items-center justify-center text-center" data-delay="400">
+                    <i data-lucide="database" class="w-12 h-12 text-purple-500 mb-4"></i>
+                    <h4 class="font-black text-2xl tracking-tighter">SQL</h4>
+                </div>
+
+                <div class="md:col-span-2 bento-item p-10 rounded-[3rem] flex items-center gap-8" data-delay="600">
+                    <div class="w-20 h-20 bg-blue-500/10 rounded-[2rem] flex items-center justify-center shrink-0">
+                        <i data-lucide="graduation-cap" class="text-blue-400 w-10 h-10"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-2xl font-bold">DEPI Trainee</h4>
+                        <p class="text-slate-500 font-medium">Digital Egypt Pioneers Initiative</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-32 px-8">
+        <div class="container mx-auto">
+            <div class="text-center mb-24 bento-item border-0 bg-transparent" data-delay="0" style="opacity:1; transform:none">
+                <h3 class="text-5xl md:text-7xl font-black tracking-tighter premium-gradient">Elite Work.</h3>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="group bento-item rounded-[3.5rem] overflow-hidden" data-delay="100">
+                    <div class="h-80 bg-slate-900 flex items-center justify-center">
+                        <i data-lucide="bar-chart-3" class="w-32 h-32 text-slate-800 group-hover:text-blue-500/50 transition-all duration-700 scale-100 group-hover:scale-125"></i>
+                    </div>
+                    <div class="p-12">
+                        <h4 class="text-3xl font-bold mb-4 italic">Data Eng. Training</h4>
+                        <p class="text-slate-400 mb-8 font-light text-lg italic">Building automated ETL workflows & scalable schemas.</p>
+                        <a href="https://github.com/aalhusseini44-svg/DataEngineeringProjects" target="_blank" class="inline-flex items-center gap-3 text-blue-500 font-black uppercase tracking-widest text-xs group-hover:gap-6 transition-all">
+                            Source Files <i data-lucide="github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="group bento-item rounded-[3.5rem] overflow-hidden" data-delay="300">
+                    <div class="h-80 bg-slate-900 flex items-center justify-center">
+                        <i data-lucide="brain" class="w-32 h-32 text-slate-800 group-hover:text-purple-500/50 transition-all duration-700 scale-100 group-hover:scale-125"></i>
+                    </div>
+                    <div class="p-12">
+                        <h4 class="text-3xl font-bold mb-4 italic">AI Integration</h4>
+                        <p class="text-slate-400 mb-8 font-light text-lg italic">Merging ML models with clean, real-time data streams.</p>
+                        <a href="https://github.com/aalhusseini44-svg" target="_blank" class="inline-flex items-center gap-3 text-purple-500 font-black uppercase tracking-widest text-xs group-hover:gap-6 transition-all">
+                            GitHub Profile <i data-lucide="github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-32 px-8">
+        <div class="container mx-auto">
+            <div class="glass p-16 md:p-32 rounded-[4rem] text-center border-white/5 relative overflow-hidden bento-item" data-delay="0">
+                <div class="absolute inset-0 bg-blue-600/5 -z-10"></div>
+                <h2 class="text-5xl md:text-8xl font-black mb-12 tracking-tighter">Let's <span class="premium-gradient italic">Sync.</span></h2>
+                <a href="mailto:aalhusseini44@gmail.com" class="text-2xl md:text-5xl font-black hover:text-blue-400 transition-all underline decoration-blue-600 decoration-4 underline-offset-8 break-all">
+                    aalhusseini44@gmail.com
+                </a>
+                <div class="flex justify-center gap-10 mt-20">
+                    <a href="https://www.linkedin.com/in/ahmedmahmo" target="_blank" class="hover:scale-125 transition duration-500"><i data-lucide="linkedin" class="w-8 h-8"></i></a>
+                    <a href="https://github.com/aalhusseini44-svg" target="_blank" class="hover:scale-125 transition duration-500"><i data-lucide="github" class="w-8 h-8"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-20 text-center text-slate-700 text-xs font-black uppercase tracking-[0.5em]">
+        © 2026 Ahmed Mahmoud • Precision & Intelligence
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        lucide.createIcons();
+
+        // Custom Staggered Reveal Logic
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const delay = entry.target.getAttribute('data-delay') || 0;
+                    setTimeout(() => {
+                        entry.target.classList.add('active');
+                    }, delay);
+                    // observer.unobserve(entry.target); // Optional: animate only once
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.bento-item').forEach(item => {
+            observer.observe(item);
+        });
+
+        // Instant show for elements already in viewport
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.querySelectorAll('.bento-item').forEach(item => {
+                    const rect = item.getBoundingClientRect();
+                    if (rect.top < window.innerHeight) {
+                        item.classList.add('active');
+                    }
+                });
+            }, 100);
+        });
+    </script>
+</body>
+</html>
